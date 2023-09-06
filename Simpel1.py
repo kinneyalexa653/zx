@@ -357,7 +357,10 @@ def atur_ter():
 	else:
 		method.append('validate')
 		
-	
+	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭────────────────────────────────────────────{x}")
+	pwtambah=input(f"{xx}└──[{x} Input : ")
+	if pwtambah in ['y','Y']:
 		pwpluss.append('ya')
 		print(f"{kun}╭────────────────────────────────────────────{x}")	
 		pwku=input(f"{xx}└──[{x} Input pw : ")
@@ -692,7 +695,7 @@ def passwrdxnx():
 			for yuzong in id2:
 				idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
 				frs = nmf.split(" ")[0]
-				pwv = ["1122334455","1234554321","112233445566","123456654321","1020304050","102030405060","19991999","20002000","20012001","20022002","20032003","1234567890","0987654321","zxcvbnm","12345678901234567890","09876543211234567890"]
+				pwv = []
 				if len(nmf)<6:
 					if len(frs)<3:
 						pass
